@@ -24,7 +24,7 @@ namespace game
 	constexpr bool useAi = true;
 	constexpr float aiThinkTime = 0.5f;
 
-	static_assert(useAi && (boardWidth < 4), "AI and board size > 3 is disabled");
+	static_assert(!useAi || (boardWidth < 4), "AI and board size > 3 is disabled");
 
 	constexpr EPiece playerPiece = playerStart ? EPiece::Cross : EPiece::Cricle;
 	constexpr EPiece computerPiece = playerStart ? EPiece::Cricle : EPiece::Cross;
